@@ -3,31 +3,23 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        int number;
 
-        System.out.print("Введите ваш вариант: ");
-        int var = scanner.nextInt();
+        final int N = 100;
 
-        System.out.print("Введите ваш порядковый N: ");
-        int N = scanner.nextInt();
+        int min1 = -15*N;
+        int max1 = -11*N;
 
-        int max = Math.max(var, N);
-        int min = Math.min(var, N);
+        int min2 = 11*N;
+        int max2 = 15*N;
 
-        for (;;) {
-            if (scanner.hasNext()) {
-                number = scanner.nextInt();
+        while (true) {
+            int number = scanner.nextInt();
 
-                if (number >= min && number <= max) {
-                    System.out.println("Correct_number");
-                    break;
-                } else {
-                    System.out.println("Not_yet");
-                }
-
+            if ((number>=min1 && number <= max1) || (number>=min2&&number<=max2)){
+                System.out.println("Correct_number_"+number);
+                break;
             } else {
-                System.out.println("Введите число: ");
-                scanner.nextInt();
+                System.out.println("Not_yet");
             }
         }
     }
